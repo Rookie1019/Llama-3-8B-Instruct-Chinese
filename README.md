@@ -13,6 +13,8 @@ Llama-3-8B-Instruct in Chinese 自己微调版本
 | [ruozhiba](https://huggingface.co/datasets/LooksJuicy/ruozhiba)                                               | 弱智吧数据问答，据说比较锻炼模型的心智能力。                                                                                                                                                               |
 欢迎补充，要求中文且一问一答形式，适合用于提升llama3任务能力的数据集
 
+### [github地址](https://github.com/Rookie1019/Llama-3-8B-Instruct-Chinese.git)
+
 ### 推荐微调工具
 在此感谢以下项目，提供了许多优秀的中文微调工具，供大家参考：
 - Firefly  -  https://github.com/yangjianxin1/Firefly  
@@ -21,6 +23,7 @@ Llama-3-8B-Instruct in Chinese 自己微调版本
 
 ### Chat版模型下载
 - Instruct + 继续中文sft版 
+- [huggingface地址](https://huggingface.co/Rookie/Llama-3-8B-Instruct-Chinese)
 
 ### 模型量化加速、部署
 
