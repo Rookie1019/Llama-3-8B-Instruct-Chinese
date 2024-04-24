@@ -35,7 +35,7 @@ Llama-3-8B-Instruct in Chinese 自己微调版本
 - [wisemodel地址](https://wisemodel.cn/models/Rookie/Llama-3-8B-Instruct-Chinese-chat/)
 - modelfile中给出了示例启动示例 
 - 1. 把Llama-3-8B-Instruct-Chinese文件中modelpath换成自己下载的gguf文件路径
-    > ollama create Llama-3-8B-Instruct-Chinese -f Llama-3-8B-Instruct-Chinese
+    > ollama create Llama-3-8B-Instruct-Chinese -f Llama-3-8B-Instruct-Chinese.txt
 - 2. 注册成功之后即可启动 
     > ollama run Llama-3-8B-Instruct-Chinese
 - 3. 可以shell下调用 可以通过api调用
