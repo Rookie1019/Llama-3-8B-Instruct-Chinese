@@ -29,6 +29,28 @@ Llama-3-8B-Instruct in Chinese 自己微调版本
 - [huggingface地址](https://huggingface.co/Rookie/Llama-3-8B-Instruct-Chinese)
 
 ### 模型量化加速、部署
+- 新增gguf模型，包括fp16和Q5_1量化 支持ollama部署
+- 地址还是老的地址
+- [huggingface地址](https://huggingface.co/Rookie/Llama-3-8B-Instruct-Chinese)
+- [wisemodel地址](https://wisemodel.cn/models/Rookie/Llama-3-8B-Instruct-Chinese-chat/)
+- modelfile中给出了示例启动示例 
+- 1. 把Llama-3-8B-Instruct-Chinese文件中modelpath换成自己下载的gguf文件路径
+    > ollama create Llama-3-8B-Instruct-Chinese -f Llama-3-8B-Instruct-Chinese
+- 2. 注册成功之后即可启动 
+    > ollama run Llama-3-8B-Instruct-Chinese
+- 3. 可以shell下调用 可以通过api调用
+    > curl --location 'http://localhost:11434/api/chat' \
+--header 'Content-Type: application/json' \
+--data '{
+    "model": "Llama-3-8B-Instruct-Chinese",
+    "messages": [
+        {
+            "role": "user",
+            "content": "写一首诗"
+        }
+    ]
+}'
+- 4. ps : modelfile中的参数仅做调整 可自行修改尝试
 
 ### 模型使用
 
