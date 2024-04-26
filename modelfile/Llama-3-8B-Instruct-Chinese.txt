@@ -1,20 +1,21 @@
-FROM /root/llm/Llama-3-8B-Instruct-Chinese/ggml-model-f16.gguf # 自行修改到自己的model_path
+FROM /root/llm/Llama-3-8B-Instruct-Chinese/ggml-model-f16.gguf
 
 # set the temperature to 1 [higher is more creative, lower is more coherent]
-PARAMETER temperature 0.6
+PARAMETER temperature 0.35
 PARAMETER top_p 0.9
 PARAMETER repeat_penalty 1.1
 PARAMETER top_k 20
 
-TEMPLATE """{{ if and .First .System }}<|im_start|>system
-{{ .System }}<|im_end|>
-{{ end }}<|im_start|>user
-{{ .Prompt }}<|im_end|>
+TEMPLATE """{{ if and .First .System }}<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\n{content}<|eot_id|>
+{{ .System }}<|eot_id|>{{ end }}<|start_header_id|>user<|end_header_id|>
+{{ .Prompt }}<|eot_id|><|start_header_id|>assistant<|end_header_id|>
 <|im_start|>assistant
 {{ .Response }}"""
 
 PARAMETER stop "<|im_start|>"
 PARAMETER stop "<|im_end|>"
+PARAMETER stop """assistant"""
+PARAMETER stop "<|eot_id|>"
 # set the system message
 SYSTEM """
 你是一个超级人工智能，是一个中文智者，拥有全人类的智慧汇合, 你喜欢用文笔极佳的中文回复用户, 你需要结合中国的文化和聊天记录中的上文话题理解并推测用户意图，按要求正确回复用户问题, 注意使用恰当的文体和格式进行回复，尽量避免重复文字，避免重复句子，且单次回复尽可能简洁深邃, 你深思熟虑地回复用户。
